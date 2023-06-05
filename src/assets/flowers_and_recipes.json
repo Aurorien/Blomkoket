@@ -1,0 +1,248 @@
+{
+  "flower": [
+    {
+      "id": 1,
+      "name": "Syren",
+      "color": ["lila", "vit"],
+      "tastenotes": ["söt", "mild", "honung", "bitter"],
+      "use": "Obegränsad",
+      "img": "../src/assets/img/lilac.png"
+    },
+    {
+      "id": 2,
+      "name": "Körsbärsblommor",
+      "color": ["rosa", "vit"],
+      "tastenotes": ["söt", "mild"],
+      "use": ["Sparsam", "Innehåller coumarin och cyanid."],
+      "img": "../src/assets/img/cherryblossom.png"
+    },
+    {
+      "id": 5,
+      "name": "Luktärt",
+      "color": ["vit", "rosa", "lila"],
+      "tastenotes": ["söt", "mild"],
+      "use": "Obegränsad",
+      "img": "../src/assets/img/luktart.png"
+    },
+    {
+      "id": 10,
+      "name": "Kryddtagetes",
+      "color": ["gul", "orange", "röd"],
+      "tastenotes": ["citrus", "pepprig"],
+      "use": "Måttlig",
+      "img": "../src/assets/img/tagetes.png"
+    },
+    {
+      "id": 4,
+      "name": "Ringblomma",
+      "color": ["gul", "orange"],
+      "tastenotes": ["mild", "bitter", "nötaktig"],
+      "use": "Obegränsad",
+      "img": "../src/assets/img/marigold.png"
+    },
+    {
+      "id": 6,
+      "name": "Maskros",
+      "color": "gul",
+      "tastenotes": ["bitter", "söt", "nötaktig"],
+      "use": ["Måttlig", "Innehåller bitterämnet taraxacin.", "krydda"],
+      "img": "../src/assets/img/dandelion.png"
+    },
+    {
+      "id": 9,
+      "name": "Gurkört",
+      "color": "blå",
+      "tastenotes": ["mild", "gurka", "friskt"],
+      "use": [
+        "Måttlig",
+        "Innehåller en liten mängd pyrrolizidinalkaloider som påverkar levern.",
+        "Undvik att förtära stor mängd eller regelbundet."
+      ],
+      "img": "../src/assets/img/gurkort.png"
+    },
+    {
+      "id": 16,
+      "name": "Blåbärsblomma",
+      "color": "rosa",
+      "tastenotes": ["mild", "söt"],
+      "use": "Obegränsad",
+      "img": "../src/assets/img/blueberryflowers.png"
+    },
+    {
+      "id": 8,
+      "name": "Zucciniblomma",
+      "color": "gul",
+      "tastenotes": ["lätt", "friskt"],
+      "use": [
+        "Obegränsad",
+        "Ät inte det som smakar ordentligt bittert, det kan då innehålla giftet cucurbitacin."
+      ],
+      "img": "../src/assets/img/zuhcciniflower.png"
+    },
+
+    {
+      "id": 11,
+      "name": "Luktviol",
+      "color": "lila",
+      "tastenotes": ["mild", "syrlig"],
+      "use": "Måttlig",
+      "img": "../src/assets/img/violets.png"
+    },
+    {
+      "id": 3,
+      "name": "Blåklocka",
+      "color": "blå",
+      "tastenotes": ["mild", "söt", "nötaktig"],
+      "use": "Obegränsad",
+      "img": "../src/assets/img/blaklocka.png"
+    },
+    {
+      "id": 14,
+      "name": "Citronbasilikablomma",
+      "color": "vit",
+      "tastenotes": ["citrus", "mild", "friskt"],
+      "use": "Obegränsad",
+      "img": "../src/assets/img/lemonbasil.png"
+    },
+    {
+      "id": 13,
+      "flowername": "Gräslöksblomma",
+      "color": "rosa",
+      "tastenotes": ["lök", "söt"],
+      "use": "Obegränsad",
+      "img": "../src/assets/img/chivesflowers.png"
+    },
+    {
+      "id": 15,
+      "name": "Gökärt",
+      "color": ["lila", "rosa"],
+      "tastenotes": ["sockerärt", "mild", "söt"],
+      "use": ["Obegränsad", "Kan förväxlas med den giftiga Vårärt"],
+      "img": "../src/assets/img/gokart.png"
+    },
+    {
+      "id": 7,
+      "name": "Fläder",
+      "color": "vit",
+      "tastenotes": ["söt", "mild"],
+      "use": [
+        "Obegränsad",
+        "Råa växtdelar förutom blommorna innehåller viss mängd toxiner som förstörs vid upphättning."
+      ],
+      "img": "../src/assets/img/elderberry.png"
+    },
+    {
+      "id": 12,
+      "name": "Blåklint",
+      "color": "blå",
+      "tastenotes": ["mild", ""],
+      "use": ["Måttlig", "dekoration"],
+      "img": "../src/assets/img/cornflower.png"
+    },
+    {
+      "id": 17,
+      "name": "Blomsterkrasse",
+      "color": ["gul", "orange", "röd"],
+      "tastenotes": ["stark", "pepprig", "bitter"],
+      "use": ["Obegränsad", "krydda"],
+      "img": "../src/assets/img/krasse.png"
+    },
+    {
+      "id": 18,
+      "name": "Ros",
+      "color": ["gul", "orange", "röd", "orange", "vit"],
+      "tastenotes": ["söt", "ros", "mild"],
+      "use": "Obegränsad",
+      "img": "../src/assets/img/rose.png"
+    }
+  ],
+
+  "recipe": [
+    {
+      "title": "Coladadelkyckling med citronbasilikablommor",
+      "ingredients": [
+        {
+          "amount": "3",
+          "unit": "st.",
+          "ingredient": "dadel"
+        },
+        {
+          "amount": "1",
+          "unit": "dl",
+          "ingredient": "Coca-Cola"
+        },
+        {
+          "amount": "70",
+          "unit": "g",
+          "ingredient": "kyckling"
+        },
+        {
+          "amount": "5-7",
+          "unit": "st.",
+          "ingredient": "citronbasilikablommor"
+        }
+      ],
+      "method": [
+        "Grovstek kycklingen",
+        "Tillsätt dadlar och Coca-Cola och stek klart",
+        "Servera och toppa med citronbasilikablommorna"
+      ]
+    },
+    {
+      "title": "Ugnsgratinerade fyllda zucchiniblommor",
+      "ingredients": [
+        {
+          "amount": "5",
+          "unit": "st.",
+          "ingredient": "zucchiniblommor"
+        },
+        {
+          "amount": "100",
+          "unit": "g",
+          "ingredient": "fetaost"
+        },
+        {
+          "amount": "0,5",
+          "unit": "skal",
+          "ingredient": "av en citron"
+        },
+        {
+          "amount": "0,5",
+          "unit": "dl",
+          "ingredient": "ströbröd"
+        },
+        {
+          "amount": "0,5",
+          "unit": "dl",
+          "ingredient": "riven parmesanost"
+        },
+        {
+          "amount": "1",
+          "unit": "msk",
+          "ingredient": "hackad persilja"
+        },
+        {
+          "amount": "1",
+          "unit": "st.",
+          "ingredient": "äggvita"
+        },
+        {
+          "amount": "15",
+          "unit": "g",
+          "ingredient": "smör"
+        }
+      ],
+      "method": [
+        "Sätt ugnen på 225 grader.",
+        "Plocka eller klipp försiktig bort ståndarna i blommorna utan att skada blombladen. Täck över dem och håll fuktiga medan du gör fyllningen. Förslagsvis kan du täcka över med en fuktig handduk.",
+        "Riv parmesanost och hacka persilja. Skölj och riv skal av citronen ner i en skål.",
+        "Smula och mosa ihop färskosten med citronskal, skorpmjöl, persilja och hälften av parmesanosten. Blanda väl. Smaka av med salt och peppar.",
+        "Vispa äggvitan till fast skum och vänd ner i ostblandningen.",
+        "Fördela fyllningen i zucchiniblomma och fyll varje blomma med ca 1-2 skedan av ostfyllningen. Vik in bladen så att du får små paket. Lägg dem i en ugsform.",
+        "Smält smöret och ringa det över blommorna. Toppa med resterande parmesan.",
+        "Gratinera zucchiniblommorna i ca 12 minuter i mitten av ugnen. Blommorna pöser då upp och får fin färg.",
+        "Servera zucchiniblommorna direkt från ugnen."
+      ]
+    }
+  ]
+}
