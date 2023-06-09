@@ -14,19 +14,24 @@ const Div = styled.footer`
   justify-content: space-around;
 `;
 
-function Footer() {
+function Footer(props) {
   return (
-    <Div>
+    <Div className={props.className}>
       <Link to="/">Hem</Link>
       <Link to="/contact">Kontakt</Link>
     </Div>
   );
 }
 
+// below, styling Link as a because that is what it becomes rendered
 export default styled(Footer)`
-  Link {
+  a {
     color: #7005b3;
-    padding: 15px;
-    font-size: 1.4rem;
+    padding: 10px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    &:hover {
+      font-size: 1.35rem;
+    }
   }
 `;

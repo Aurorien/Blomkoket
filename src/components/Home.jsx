@@ -1,14 +1,13 @@
 /* eslint-disable react-refresh/only-export-components */
 import styled from "styled-components";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchFlowers } from "../store";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Div = styled.div`
   margin: 0;
   background-color: #789cb6;
   overflow: hidden;
+  text-align: center;
 `;
 
 const H1 = styled.h1`
@@ -16,8 +15,8 @@ const H1 = styled.h1`
   color: #fcfcfd;
   width: 100%;
   height: 100%;
-  text-align: center;
-  padding-bottom: 30px;
+  margin: 0;
+  font-size: 3.4rem;
 `;
 
 const Img = styled.img`
@@ -35,6 +34,14 @@ const Li = styled.li`
   color: aliceblue;
   margin: 0;
   padding: 0;
+  list-style: none;
+`;
+
+const P = styled.p`
+  width: 200px;
+  margin-top: 8px;
+  padding-bottom: 10px;
+  font-weight: 100;
 `;
 
 const Ul = styled.ul`
@@ -52,12 +59,13 @@ function chunkArray(array, size) {
 }
 
 function Home() {
-  const dispatch = useDispatch(),
-    flowers = useSelector((state) => state.flowers);
+  // const dispatch = useDispatch(),
+  //   flowers = useSelector((state) => state.flowers);
+  // useEffect(() => {
+  //   dispatch(fetchFlowers());
+  // }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(fetchFlowers());
-  }, [dispatch]);
+  const flowers = useSelector((state) => state.flowers);
 
   return (
     <Div>
@@ -65,14 +73,23 @@ function Home() {
         <Ul style={{ marginTop: 0, alignItems: "flex-end" }}>
           <Li
             key={flowers[0].id}
-            style={{ display: "inline-block", marginRight: "10px" }}
+            style={{
+              display: "inline-block",
+              marginRight: "10px",
+            }}
           >
             <Link to={`/flower/${flowers[0].id}`}>
               <Img src={flowers[0].img} alt={flowers[0].name} />
             </Link>
           </Li>
-          <H1>Blomspis</H1>
-          <Li key={flowers[1].id} style={{ display: "inline-block" }}>
+          <Li>
+            <H1>Blomgott</H1>
+            <P>Ätbara blommor och recept</P>
+          </Li>
+          <Li
+            key={flowers[1].id}
+            style={{ display: "inline-block", marginLeft: "10px" }}
+          >
             <Link to={`/flower/${flowers[1].id}`}>
               <Img src={flowers[1].img} alt={flowers[1].name} />
             </Link>

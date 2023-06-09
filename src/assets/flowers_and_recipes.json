@@ -13,7 +13,7 @@
       "name": "Körsbärsblommor",
       "color": ["rosa", "vit"],
       "tastenotes": ["söt", "mild"],
-      "use": ["Sparsam", "Innehåller coumarin och cyanid."],
+      "use": ["Sparsam", "Innehåller coumarin och cyanid"],
       "img": "../src/assets/img/cherryblossom.png"
     },
     {
@@ -55,8 +55,8 @@
       "tastenotes": ["mild", "gurka", "friskt"],
       "use": [
         "Måttlig",
-        "Innehåller en liten mängd pyrrolizidinalkaloider som påverkar levern.",
-        "Undvik att förtära stor mängd eller regelbundet."
+        "Innehåller en liten mängd pyrrolizidinalkaloider som påverkar levern",
+        "Undvik att förtära stor mängd eller regelbundet"
       ],
       "img": "../src/assets/img/gurkort.png"
     },
@@ -75,7 +75,7 @@
       "tastenotes": ["lätt", "friskt"],
       "use": [
         "Obegränsad",
-        "Ät inte det som smakar ordentligt bittert, det kan då innehålla giftet cucurbitacin."
+        "Ät inte det som smakar ordentligt bittert, det kan då innehålla giftet cucurbitacin"
       ],
       "img": "../src/assets/img/zuhcciniflower.png"
     },
@@ -127,7 +127,7 @@
       "tastenotes": ["söt", "mild"],
       "use": [
         "Obegränsad",
-        "Råa växtdelar förutom blommorna innehåller viss mängd toxiner som förstörs vid upphättning."
+        "Råa växtdelar förutom blommorna innehåller viss mängd toxiner som förstörs vid upphättning"
       ],
       "img": "../src/assets/img/elderberry.png"
     },
@@ -159,7 +159,9 @@
 
   "recipe": [
     {
+      "id": 1,
       "title": "Coladadelkyckling med citronbasilikablommor",
+      "flowerIds": 14,
       "ingredients": [
         {
           "amount": "3",
@@ -189,7 +191,30 @@
       ]
     },
     {
+      "id": 2,
+      "title": "Citronbasilikablomspäckad buffelmozzarella",
+      "flowerIds": 14,
+      "ingredients": [
+        {
+          "amount": "100",
+          "unit": "g",
+          "ingredient": ""
+        },
+        {
+          "amount": "8",
+          "unit": "st.",
+          "ingredient": "citronbasilikablommor"
+        }
+      ],
+      "method": [
+        "Späcka buffalomozzarellan med citronbasilikablommorna",
+        "Låt ligga i kylskåpet i 2 timmar",
+        "Servera aningens kallare än rumstemperatur med gurka och isbergsallad"
+      ]
+    },
+    {
       "title": "Ugnsgratinerade fyllda zucchiniblommor",
+      "flowerIds": 8,
       "ingredients": [
         {
           "amount": "5",
