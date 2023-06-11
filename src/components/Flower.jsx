@@ -1,10 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
 import styled from "styled-components";
 import RecipeCard from "./RecipeCard";
 
-function Flower() {
+function Flower(props) {
   const flowerId = useParams(),
     flowers = useSelector((state) => state.flowers),
     flower = useMemo(
@@ -17,22 +18,12 @@ function Flower() {
   console.log("Blommorna", flowers);
   console.log("BLOMMAN", flower);
 
-  const Article = styled.article`
-    display: flex;
-    justify-content: space-around;
-  `;
-
-  const Img = styled.img`
-    max-width: 300px;
-    height: auto;
-  `;
-
   return (
-    <>
+    <div className={props.className}>
       {flower && (
-        <Article>
+        <article>
           <section>
-            <Img src={flower.img} alt={flower.name} />
+            <img src={flower.img} alt={flower.name} />
             <h1>{flower.name}</h1>
             <p>Smak: {flower.tastenotes.join(", ")}</p>
             <p>
@@ -43,12 +34,27 @@ function Flower() {
             </p>
           </section>
           <section>
+            <h2>Recept</h2>
             <RecipeCard margin={20} flowerId={flower.id} />
           </section>
-        </Article>
+        </article>
       )}
-    </>
+    </div>
   );
 }
 
-export default Flower;
+export default styled(Flower)`
+  article {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  img {
+    max-width: 300px;
+    height: auto;
+  }
+`;
