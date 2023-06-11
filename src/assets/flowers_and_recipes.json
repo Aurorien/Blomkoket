@@ -17,7 +17,7 @@
       "img": "../src/assets/img/cherryblossom.png"
     },
     {
-      "id": 5,
+      "id": 3,
       "name": "Luktärt",
       "color": ["vit", "rosa", "lila"],
       "tastenotes": ["söt", "mild"],
@@ -25,7 +25,7 @@
       "img": "../src/assets/img/luktart.png"
     },
     {
-      "id": 10,
+      "id": 4,
       "name": "Kryddtagetes",
       "color": ["gul", "orange", "röd"],
       "tastenotes": ["citrus", "pepprig"],
@@ -33,7 +33,7 @@
       "img": "../src/assets/img/tagetes.png"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Ringblomma",
       "color": ["gul", "orange"],
       "tastenotes": ["mild", "bitter", "nötaktig"],
@@ -49,7 +49,7 @@
       "img": "../src/assets/img/dandelion.png"
     },
     {
-      "id": 9,
+      "id": 7,
       "name": "Gurkört",
       "color": "blå",
       "tastenotes": ["mild", "gurka", "friskt"],
@@ -61,7 +61,7 @@
       "img": "../src/assets/img/gurkort.png"
     },
     {
-      "id": 16,
+      "id": 8,
       "name": "Blåbärsblomma",
       "color": "rosa",
       "tastenotes": ["mild", "söt"],
@@ -69,7 +69,7 @@
       "img": "../src/assets/img/blueberryflowers.png"
     },
     {
-      "id": 8,
+      "id": 9,
       "name": "Zucciniblomma",
       "color": "gul",
       "tastenotes": ["lätt", "friskt"],
@@ -81,7 +81,7 @@
     },
 
     {
-      "id": 11,
+      "id": 10,
       "name": "Luktviol",
       "color": "lila",
       "tastenotes": ["mild", "syrlig"],
@@ -89,7 +89,7 @@
       "img": "../src/assets/img/violets.png"
     },
     {
-      "id": 3,
+      "id": 11,
       "name": "Blåklocka",
       "color": "blå",
       "tastenotes": ["mild", "söt", "nötaktig"],
@@ -97,7 +97,7 @@
       "img": "../src/assets/img/blaklocka.png"
     },
     {
-      "id": 14,
+      "id": 12,
       "name": "Citronbasilikablomma",
       "color": "vit",
       "tastenotes": ["citrus", "mild", "friskt"],
@@ -113,7 +113,7 @@
       "img": "../src/assets/img/chivesflowers.png"
     },
     {
-      "id": 15,
+      "id": 14,
       "name": "Gökärt",
       "color": ["lila", "rosa"],
       "tastenotes": ["sockerärt", "mild", "söt"],
@@ -121,7 +121,7 @@
       "img": "../src/assets/img/gokart.png"
     },
     {
-      "id": 7,
+      "id": 15,
       "name": "Fläder",
       "color": "vit",
       "tastenotes": ["söt", "mild"],
@@ -132,7 +132,7 @@
       "img": "../src/assets/img/elderberry.png"
     },
     {
-      "id": 12,
+      "id": 16,
       "name": "Blåklint",
       "color": "blå",
       "tastenotes": ["mild", ""],
@@ -161,7 +161,8 @@
     {
       "id": 1,
       "title": "Coladadelkyckling med citronbasilikablommor",
-      "flowerIds": 14,
+      "source": "Embla Tinúviel",
+      "flowerIds": 12,
       "ingredients": [
         {
           "amount": "3",
@@ -193,12 +194,13 @@
     {
       "id": 2,
       "title": "Citronbasilikablomspäckad buffelmozzarella",
-      "flowerIds": 14,
+      "source": "Embla Tinúviel",
+      "flowerIds": 12,
       "ingredients": [
         {
           "amount": "100",
           "unit": "g",
-          "ingredient": ""
+          "ingredient": "buffelmozzarella"
         },
         {
           "amount": "8",
@@ -213,8 +215,10 @@
       ]
     },
     {
+      "id": 3,
       "title": "Ugnsgratinerade fyllda zucchiniblommor",
-      "flowerIds": 8,
+      "source": "Henrik Mattsson",
+      "flowerIds": 9,
       "ingredients": [
         {
           "amount": "5",
@@ -267,6 +271,46 @@
         "Smält smöret och ringa det över blommorna. Toppa med resterande parmesan.",
         "Gratinera zucchiniblommorna i ca 12 minuter i mitten av ugnen. Blommorna pöser då upp och får fin färg.",
         "Servera zucchiniblommorna direkt från ugnen."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Maskroshonung",
+      "source": "Wonder Vegan",
+      "flowerIds": 6,
+      "ingredients": [
+        {
+          "amount": "100",
+          "unit": "g",
+          "ingredient": "maskroskoronblad"
+        },
+        {
+          "amount": "6",
+          "unit": "dl",
+          "ingredient": "vatten"
+        },
+        {
+          "amount": "1",
+          "unit": "st",
+          "ingredient": "citron: citronzest + ev. citronjuice"
+        },
+        {
+          "amount": "1",
+          "unit": "l",
+          "ingredient": "strösocker"
+        }
+      ],
+      "method": [
+        "Dra bort de gula bladen från blommorna tills du har ca 100g blomblad",
+        "Skölj blombladen i kallt vatten och plocka bort eventuella småkryp",
+        "Lägg blombladen samt citronzest från en citron i en gryta och häll i 6 dl vatten",
+        "Koka upp och låt skjuda på låg värme i ca 20 minuter",
+        "Låt svalna och sila sedan bort bladen och häll vätskan i en ny, ren gryta",
+        "Häll i sockret och eventuellt juicen från 0.5-1 citron beroende på hur mycket syrleihet du vill ha. Vill du bara he an klassisk, söt honung kan du skippa citronjuicen helt",
+        "Låt koka i ca 60 minuter, tills honungen börjar tjockna. Tänk på att den blir ganska mycket tjockare/hårdare när den svalnar, så den ska vara ganska lättrinnande",
+        "Häll upp i rena, gärna varma, burkar",
+        "Låt svalna något innan du stänger locket",
+        "Oöppnad burk föfrvaras mörkt och svalt, öppnad burk förvaras i kylskåp"
       ]
     }
   ]

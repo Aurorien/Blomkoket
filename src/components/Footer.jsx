@@ -11,7 +11,7 @@ const Div = styled.footer`
   bottom: 0;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 `;
 
 function Footer(props) {
@@ -27,8 +27,10 @@ function Footer(props) {
 export default styled(Footer)`
   a {
     color: #7005b3;
+    /* font-size: 1.25rem; */
+    font-size: 1rem;
+    margin-right: 30px;
     padding: 10px;
-    font-size: 1.25rem;
     text-decoration: none;
     &:hover {
       font-size: 1.35rem;

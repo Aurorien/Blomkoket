@@ -3,17 +3,19 @@ import { Field, ErrorMessage, Form, Formik } from "formik";
 import styled from "styled-components";
 import { Button } from "./Button";
 
-interface styledComponentsProps {
-  className: string
+interface StyledComponentsProps {
+  className: string;
 }
 
-function Contact(props: styledComponentsProps) {
+function Contact(props: StyledComponentsProps) {
   return (
     <div className={props.className}>
       <div className="image-container">
         <img src="../src/assets/img/contact.png" alt="" />
       </div>
-      <span className="contact-h1-container"><h1>Kontakta Admin</h1></span>
+      <span className="contact-h1-container">
+        <h1>Kontakta Admin</h1>
+      </span>
       <Formik
         initialValues={{ userName: "", email: "", message: "" }}
         onSubmit={(values, { setSubmitting }) => {
@@ -48,7 +50,11 @@ function Contact(props: styledComponentsProps) {
 
                 <Field name="userName" className="contact-input" />
               </label>
-              <ErrorMessage component="span" name="userName" className="contact-error" />
+              <ErrorMessage
+                component="span"
+                name="userName"
+                className="contact-error"
+              />
             </div>
             <div className="contact-container">
               <label>
@@ -56,17 +62,25 @@ function Contact(props: styledComponentsProps) {
 
                 <Field name="email" className="contact-input" />
               </label>
-              <ErrorMessage component="span" name="email" className="contact-error"/>
+              <ErrorMessage
+                component="span"
+                name="email"
+                className="contact-error"
+              />
             </div>
             <div className="contact-container">
               <label>
                 <span className="contact-label">Meddelande</span>
 
-                <Field as="textarea" name="message" className="contact-input"/>
+                <Field as="textarea" name="message" className="contact-input" />
               </label>
-              <ErrorMessage component="span" name="message" className="contact-error"/>
+              <ErrorMessage
+                component="span"
+                name="message"
+                className="contact-error"
+              />
             </div>
-            <Button disabled={!dirty || isSubmitting || !isValid} >
+            <Button disabled={!dirty || isSubmitting || !isValid}>
               Skicka
             </Button>
           </Form>
@@ -115,14 +129,14 @@ export default styled(Contact)`
   .contact-label {
     text-align: end;
     color: white;
-    text-shadow:  2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #FC0, 2px 2px 15px #FC0;
+    text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
+      2px 2px 15px #fc0;
   }
 
   .contact-h1-container {
     display: flex;
     justify-content: center;
   }
-
 
   form {
     display: flex;
@@ -132,13 +146,14 @@ export default styled(Contact)`
 
   h1 {
     margin: 30px 0 20px 0;
-    background-color: rgb(255, 183, 2, .8);
+    background-color: rgb(255, 183, 2, 0.8);
     box-shadow: 2px 2px 15px #ffb702, 2px 2px 15px rgb(255, 183, 2);
     width: fit-content;
 
     border-radius: 30px;
     color: white;
-    text-shadow:  2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #FC0, 2px 2px 15px #FC0;
+    text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
+      2px 2px 15px #fc0;
   }
 
   .image-container {
@@ -159,7 +174,7 @@ export default styled(Contact)`
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 10px;
-    background-color: rgb(255, 183, 2, .55);
+    background-color: rgb(255, 183, 2, 0.55);
     padding: 10px 10px 0 10px;
     border-radius: 20px;
   }

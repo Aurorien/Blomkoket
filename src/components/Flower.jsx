@@ -25,16 +25,18 @@ function Flower(props) {
           <section>
             <img src={flower.img} alt={flower.name} />
             <h1>{flower.name}</h1>
-            <p>Smak: {flower.tastenotes.join(", ")}</p>
-            <p>
-              Användning:{" "}
-              {Array.isArray(flower.use) && flower.use.length > 1
-                ? flower.use.join(". ")
-                : flower.use}
-            </p>
+            <div>
+              <p>Smak: {flower.tastenotes.join(", ")}</p>
+              <p>
+                Användning:{" "}
+                {Array.isArray(flower.use) && flower.use.length > 1
+                  ? flower.use.join(". ")
+                  : flower.use}
+              </p>
+            </div>
           </section>
           <section>
-            <h2>Recept</h2>
+            <h2>Recept:</h2>
             <RecipeCard margin={20} flowerId={flower.id} />
           </section>
         </article>
@@ -56,5 +58,10 @@ export default styled(Flower)`
   img {
     max-width: 300px;
     height: auto;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
