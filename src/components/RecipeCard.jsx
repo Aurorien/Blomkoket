@@ -14,11 +14,12 @@ const Div = styled.div`
 `;
 
 function RecipeCard(props) {
-  const flowerId = props.flowerId,
-    recipes = useSelector((state) => state.recipes),
-    filteredRecipes = recipes.filter(
-      (recipe) => recipe.flowerIds === parseInt(flowerId)
-    );
+  const flowerId = props.flowerId;
+  const recipes = useSelector((state) => state.recipes);
+  const filteredRecipes = recipes.filter((recipe) =>
+    recipe.flowerIds.includes(parseInt(flowerId))
+  );
+
   console.log("props.value", props.flowerId);
   console.log("Recipes", recipes);
   console.log("recipe", filteredRecipes);

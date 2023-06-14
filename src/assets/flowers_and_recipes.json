@@ -70,12 +70,12 @@
     },
     {
       "id": 9,
-      "name": "Zucciniblomma",
+      "name": "Zucchiniblomma",
       "color": "gul",
       "tastenotes": ["lätt", "friskt"],
       "use": [
         "Obegränsad",
-        "Ät inte det som smakar ordentligt bittert, det kan då innehålla giftet cucurbitacin"
+        "Ät inte det som smakar ordentligt bittert, det kan då innehålla giftet cucurbitacin, precis som med zucchini, squash och gurka generellt (är sällsynt)"
       ],
       "img": "../src/assets/img/zuhcciniflower.png"
     },
@@ -162,7 +162,7 @@
       "id": 1,
       "title": "Coladadelkyckling med citronbasilikablommor",
       "source": "Embla Tinúviel",
-      "flowerIds": 12,
+      "flowerIds": [12],
       "ingredients": [
         {
           "amount": "3",
@@ -195,7 +195,7 @@
       "id": 2,
       "title": "Citronbasilikablom-späckad buffelmozzarella",
       "source": "Embla Tinúviel",
-      "flowerIds": 12,
+      "flowerIds": [12],
       "ingredients": [
         {
           "amount": "100",
@@ -218,7 +218,7 @@
       "id": 3,
       "title": "Ugnsgratinerade fyllda zucchiniblommor",
       "source": "Henrik Mattsson",
-      "flowerIds": 9,
+      "flowerIds": [9],
       "ingredients": [
         {
           "amount": "5",
@@ -277,7 +277,7 @@
       "id": 4,
       "title": "Maskroshonung",
       "source": "Wonder Vegan",
-      "flowerIds": 6,
+      "flowerIds": [6, 2, 3, 4, 5],
       "ingredients": [
         {
           "amount": "100",

@@ -100,7 +100,6 @@ export default styled(Contact)`
   .contact-container {
     color: #f5e4e4;
     display: grid;
-    /* grid-gap: 10px; */
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "none label error";
   }
