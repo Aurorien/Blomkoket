@@ -91,44 +91,44 @@ function Contact(props: StyledComponentsProps) {
 }
 
 export default styled(Contact)`
+  height: 100vh;
   overflow: hidden;
   position: relative;
-  width: 100vw;
-  height: 100vh;
   text-align: center;
+  width: 100vw;
 
   .contact-container {
     color: #f5e4e4;
     display: grid;
+    /* grid-gap: 10px; */
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "none label error";
-    grid-gap: 10px;
   }
 
   .contact-error {
-    grid-area: error;
-    display: flex;
-    align-items: baseline;
-    color: red;
-    width: fit-content;
-    height: fit-content;
-    margin-top: 10.5px;
-    padding: 1px 5px 1.5px 5px;
-    border-radius: 20em;
     background-color: #f5e4e4;
+    border-radius: 1em;
     box-shadow: 7px 5px 5px red, -7px -5px 5px red;
+    color: red;
+    font-size: 0.8rem;
+    grid-area: error;
+    height: fit-content;
+    margin-right: 5px;
+    margin-top: 10.5px;
+    padding: 3px 3px 2px 5px;
+    width: 100px;
   }
 
   .contact-input {
-    display: flex;
-    width: 150px;
     align-items: flex-start;
+    display: flex;
     margin-bottom: 10px;
+    width: 150px;
   }
 
   .contact-label {
-    text-align: end;
     color: white;
+    text-align: end;
     text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
       2px 2px 15px #fc0;
   }
@@ -139,29 +139,28 @@ export default styled(Contact)`
   }
 
   form {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   h1 {
-    margin: 30px 0 20px 0;
     background-color: rgb(255, 183, 2, 0.8);
-    box-shadow: 2px 2px 15px #ffb702, 2px 2px 15px rgb(255, 183, 2);
-    width: fit-content;
-
     border-radius: 30px;
+    box-shadow: 2px 2px 15px #ffb702, 2px 2px 15px rgb(255, 183, 2);
     color: white;
+    margin: 30px 0 20px 0;
     text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
       2px 2px 15px #fc0;
+    width: fit-content;
   }
 
   .image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: -1;
     img {
       width: 100%;
@@ -170,12 +169,12 @@ export default styled(Contact)`
   }
 
   label {
-    grid-area: label;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 10px;
     background-color: rgb(255, 183, 2, 0.55);
-    padding: 10px 10px 0 10px;
     border-radius: 20px;
+    display: grid;
+    grid-area: label;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px 10px 0 10px;
   }
 `;

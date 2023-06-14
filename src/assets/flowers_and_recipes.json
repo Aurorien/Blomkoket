@@ -45,7 +45,7 @@
       "name": "Maskros",
       "color": "gul",
       "tastenotes": ["bitter", "söt", "nötaktig"],
-      "use": ["Måttlig", "Innehåller bitterämnet taraxacin.", "krydda"],
+      "use": ["Måttlig", "Innehåller bitterämnet taraxacin", "Krydda"],
       "img": "../src/assets/img/dandelion.png"
     },
     {
@@ -193,7 +193,7 @@
     },
     {
       "id": 2,
-      "title": "Citronbasilikablomspäckad buffelmozzarella",
+      "title": "Citronbasilikablom-späckad buffelmozzarella",
       "source": "Embla Tinúviel",
       "flowerIds": 12,
       "ingredients": [

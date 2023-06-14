@@ -73,23 +73,24 @@ function Recipe(props: StyledComponentsProps) {
 }
 
 export default styled(Recipe)`
-  background-color: aquamarine;
-  display: grid;
+  background-color: #6cb8fa;
   height: 100vh;
   margin: 0;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  width: 100vw;
+  text-shadow: 7px 7px 10px white, -7px -7px 10px white, 7px 7px 18px white,
+    -7px -7px 18px white;
 
   article {
-    background-color: #61aaea;
-    grid-area: article;
-    margin-bottom: 100px;
-    padding: 40px 40px 70px 70px;
     width: 100vw;
+    padding: 7% 0 90px 10%;
   }
 
   h1 {
-    /* background-color: #7b8ec3; */
     font-size: 2rem;
     margin-bottom: 0;
+    padding-right: 40px;
   }
 
   h2 {
@@ -102,6 +103,7 @@ export default styled(Recipe)`
     max-width: 550px;
     li {
       margin-bottom: 10px;
+      padding-right: 40px;
     }
   }
 
@@ -113,6 +115,12 @@ export default styled(Recipe)`
     width: fit-content;
     &:hover {
       font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 845px) {
+    article {
+      max-width: 100vw;
     }
   }
 `;

@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 
 const Div = styled.footer`
   background-color: #86c2be;
-  height: 8vh;
-  position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  height: 8vh;
+  justify-content: space-around;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  @media (min-width: 600px) {
+    justify-content: flex-end;
+  }
 `;
 
 function Footer(props) {
@@ -27,13 +30,16 @@ function Footer(props) {
 export default styled(Footer)`
   a {
     color: #7005b3;
-    /* font-size: 1.25rem; */
     font-size: 1rem;
-    margin-right: 30px;
+    margin-top: 6px;
     padding: 10px;
     text-decoration: none;
+    width: 3rem;
     &:hover {
       font-size: 1.35rem;
+    }
+    @media (min-width: 600px) {
+      margin-right: 70px;
     }
   }
 `;

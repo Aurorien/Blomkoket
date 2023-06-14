@@ -23,6 +23,10 @@ function RecipeCard(props) {
   console.log("Recipes", recipes);
   console.log("recipe", filteredRecipes);
 
+  if (filteredRecipes.length === 0) {
+    return <p>Inga recept än.</p>;
+  }
+
   return (
     <>
       {filteredRecipes.map((recipe) => (

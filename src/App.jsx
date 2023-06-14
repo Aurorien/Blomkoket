@@ -4,32 +4,14 @@ import Footer from "./components/Footer";
 import Flower from "./components/Flower";
 import Contact from "./components/Contact";
 import Recipe from "./components/Recipe";
-// import styled from "styled-components";
 import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchFlowers } from "./store";
 
-// const Main = styled.main`
-//   font-family: Roboto, serif;
-//   background-color: #3d7e61;
-//   text-align: center;
-//   height: 100vh;
-// `;
-
-// const Div = styled.div`
-//   .image-container {
-//     position: relative;
-//     z-index: -1;
-//   }
-// `;
-
 function Root() {
   return (
     <>
-      {/* <Div className="image-container">
-        <img src="../src/assets/img/contact.png" alt="" />
-      </Div> */}
       <Outlet />
       <Footer />
     </>
