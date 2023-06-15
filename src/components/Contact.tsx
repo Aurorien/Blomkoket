@@ -69,7 +69,7 @@ function Contact(props: StyledComponentsProps) {
               />
             </div>
             <div className="contact-container">
-              <label>
+              <label className="contact-label-message">
                 <span className="contact-label">Meddelande</span>
 
                 <Field as="textarea" name="message" className="contact-input" />
@@ -130,6 +130,11 @@ export default styled(Contact)`
     text-align: end;
     text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
       2px 2px 15px #fc0;
+    width: 5rem;
+  }
+
+  .contact-label-message {
+    margin-right: 20%;
   }
 
   .contact-h1-container {

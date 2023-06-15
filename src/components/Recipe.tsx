@@ -104,7 +104,7 @@ function Recipe(props: StyledComponentsProps) {
 }
 
 export default styled(Recipe)`
-  background-color: #6cb8fa;
+  background-color: rgb(129, 194, 251);
   height: 100vh;
   margin: 0;
   overflow-x: hidden;
@@ -121,7 +121,7 @@ export default styled(Recipe)`
   h1 {
     font-size: 2rem;
     margin-bottom: 0;
-    padding-right: 40px;
+    padding-right: 60px;
   }
 
   h2 {
@@ -134,7 +134,7 @@ export default styled(Recipe)`
     max-width: 550px;
     li {
       margin-bottom: 10px;
-      padding-right: 40px;
+      padding-right: 70px;
     }
   }
 
@@ -166,20 +166,24 @@ export default styled(Recipe)`
       border-radius: 7px;
       max-width: 150px;
     }
-    img,
-    p {
+
+    li {
+      padding-bottom: 4%;
+      padding-right: 0;
+      width: 150px;
       transition: transform 0.05s;
       &:hover {
         transform: scale(1.05);
       }
     }
-    li {
-      padding-bottom: 4%;
-      padding-right: 0;
-      width: 150px;
-    }
     p {
       font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 704px) and (max-width: 750px) {
+    h1 {
+      padding-right: 100px;
     }
   }
 

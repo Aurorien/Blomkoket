@@ -49,6 +49,7 @@ const store = configureStore(
 export default store;
 
 //////////////////////////////////////////////////////////
+//Typescript-varianter av store.js som inte helt fungerar:
 
 // import {
 //   configureStore,

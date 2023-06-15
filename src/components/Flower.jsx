@@ -54,7 +54,6 @@ export default styled(Flower)`
     flex-direction: column;
     justify-content: space-around;
     overflow-wrap: break-word;
-    /* margin-bottom: ; */
   }
 
   h1 {
