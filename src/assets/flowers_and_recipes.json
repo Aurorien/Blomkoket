@@ -282,7 +282,7 @@
         {
           "amount": "100",
           "unit": "g",
-          "ingredient": "maskroskoronblad"
+          "ingredient": "maskroskronblad"
         },
         {
           "amount": "6",
@@ -301,16 +301,16 @@
         }
       ],
       "method": [
-        "Dra bort de gula bladen från blommorna tills du har ca 100g blomblad",
-        "Skölj blombladen i kallt vatten och plocka bort eventuella småkryp",
-        "Lägg blombladen samt citronzest från en citron i en gryta och häll i 6 dl vatten",
-        "Koka upp och låt skjuda på låg värme i ca 20 minuter",
-        "Låt svalna och sila sedan bort bladen och häll vätskan i en ny, ren gryta",
-        "Häll i sockret och eventuellt juicen från 0.5-1 citron beroende på hur mycket syrleihet du vill ha. Vill du bara he an klassisk, söt honung kan du skippa citronjuicen helt",
-        "Låt koka i ca 60 minuter, tills honungen börjar tjockna. Tänk på att den blir ganska mycket tjockare/hårdare när den svalnar, så den ska vara ganska lättrinnande",
-        "Häll upp i rena, gärna varma, burkar",
-        "Låt svalna något innan du stänger locket",
-        "Oöppnad burk föfrvaras mörkt och svalt, öppnad burk förvaras i kylskåp"
+        "Dra bort de gula bladen från blommorna tills du har ca 100g blomblad.",
+        "Skölj blombladen i kallt vatten och plocka bort eventuella småkryp.",
+        "Lägg blombladen samt citronzest från en citron i en gryta och häll i 6 dl vatten.",
+        "Koka upp och låt skjuda på låg värme i ca 20 minuter.",
+        "Låt svalna och sila sedan bort bladen och häll vätskan i en ny, ren gryta.",
+        "Häll i sockret och eventuellt juicen från 0.5-1 citron beroende på hur mycket syrlighet du vill ha. Vill du bara ha en klassisk, söt honung kan du skippa citronjuicen helt.",
+        "Låt koka i ca 60 minuter, tills honungen börjar tjockna. Tänk på att den blir ganska mycket tjockare/hårdare när den svalnar, så den ska vara ganska lättrinnande.",
+        "Häll upp i rena, gärna varma, burkar.",
+        "Låt svalna något innan du stänger locket.",
+        "Oöppnad burk förvaras mörkt och svalt, öppnad burk förvaras i kylskåp."
       ]
     }
   ]

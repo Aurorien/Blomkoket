@@ -49,6 +49,9 @@ function Flower(props) {
 }
 
 export default styled(Flower)`
+  background-color: #fbf9d0;
+  color: #1b1b1b;
+  height: 100%;
   article {
     display: flex;
     flex-direction: column;

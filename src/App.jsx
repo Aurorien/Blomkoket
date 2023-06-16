@@ -1,8 +1,10 @@
 // import { useState } from 'react'
-import Home from "./components/Home";
-import Footer from "./components/Footer";
-import Flower from "./components/Flower";
 import Contact from "./components/Contact";
+import Flower from "./components/Flower";
+import Footer from "./components/Footer";
+import GlobalStyled from "./globalStyled";
+import Home from "./components/Home";
+
 import Recipe from "./components/Recipe";
 import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
 import { useEffect } from "react";
@@ -12,6 +14,7 @@ import { fetchFlowers } from "./store";
 function Root() {
   return (
     <>
+      <GlobalStyled />
       <Outlet />
       <Footer />
     </>

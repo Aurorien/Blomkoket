@@ -15,9 +15,9 @@ interface Recipe {
   id: number;
   title: string;
   source: string;
-  flowerIds: [];
+  flowerIds: number[];
   ingredients: Ingredient[];
-  method: [];
+  method: string[];
 }
 
 interface Ingredient {
@@ -54,7 +54,7 @@ function Recipe(props: StyledComponentsProps) {
 
   const flowerIds = useMemo(() => recipe?.flowerIds ?? [], [recipe]);
   const flowersUsed = useMemo(() => {
-    return flowers.filter((flower) => flowerIds.includes(flower.id));
+    return flowers?.filter((flower) => flowerIds.includes(flower.id));
   }, [flowers, flowerIds]);
 
   return (
@@ -85,7 +85,7 @@ function Recipe(props: StyledComponentsProps) {
             </section>
           </article>
           <article>
-            <h2>Blommor i receptet:</h2>
+            <h2 className="recipe-flowers-used-h2">Blommor i receptet:</h2>
             <ul className="recipe-flowers-used">
               {flowersUsed.map((flower, index) => (
                 <li key={index}>
@@ -105,6 +105,7 @@ function Recipe(props: StyledComponentsProps) {
 
 export default styled(Recipe)`
   background-color: rgb(129, 194, 251);
+  color: #1b1b1b;
   height: 100vh;
   margin: 0;
   overflow-x: hidden;
@@ -127,6 +128,7 @@ export default styled(Recipe)`
   h2 {
     font-size: 1.3em;
     margin-top: 27px;
+    margin-bottom: 40px;
   }
 
   ol,
@@ -140,7 +142,8 @@ export default styled(Recipe)`
 
   p {
     font-size: 0.7rem;
-    margin-top: 10px;
+    margin-top: 0;
+    margin-bottom: 6px;
     margin-left: -20px;
     padding: 0 25px 0 25px;
     width: fit-content;
@@ -168,7 +171,7 @@ export default styled(Recipe)`
     }
 
     li {
-      padding-bottom: 4%;
+      padding-bottom: 10px;
       padding-right: 0;
       width: 150px;
       transition: transform 0.05s;
@@ -179,6 +182,11 @@ export default styled(Recipe)`
     p {
       font-size: 1rem;
     }
+  }
+
+  .recipe-flowers-used-h2 {
+    color: #241554;
+    margin-left: 28px;
   }
 
   @media (min-width: 704px) and (max-width: 750px) {

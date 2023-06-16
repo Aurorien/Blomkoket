@@ -44,45 +44,49 @@ function Contact(props: StyledComponentsProps) {
       >
         {({ dirty, isSubmitting, isValid }) => (
           <Form>
-            <div className="contact-container">
-              <label>
-                <span className="contact-label"> Namn</span>
+            <div className="contact-container-container">
+              <div className="contact-container">
+                <label className="contact-label" htmlFor="userName">
+                  {" "}
+                  Namn
+                </label>
+                <Field
+                  id="userName"
+                  name="userName"
+                  className="contact-input"
+                />
+                <div className="contact-error">
+                  <ErrorMessage component="span" name="userName" />
+                </div>
+                <label className="contact-label" htmlFor="email">
+                  {" "}
+                  Email
+                </label>
+                <Field id="email" name="email" className="contact-input" />
+                <div className="contact-error">
+                  <ErrorMessage component="span" name="email" />
+                </div>
 
-                <Field name="userName" className="contact-input" />
-              </label>
-              <ErrorMessage
-                component="span"
-                name="userName"
-                className="contact-error"
-              />
+                <label className="contact-label" htmlFor="message">
+                  {" "}
+                  Meddelande
+                </label>
+                <Field
+                  as="textarea"
+                  id="message"
+                  name="message"
+                  className="contact-input"
+                />
+                <div className="contact-error">
+                  <ErrorMessage component="span" name="message" />
+                </div>
+                <div className="contact-button">
+                  <Button disabled={!dirty || isSubmitting || !isValid}>
+                    Skicka
+                  </Button>
+                </div>
+              </div>
             </div>
-            <div className="contact-container">
-              <label>
-                <span className="contact-label"> Email</span>
-
-                <Field name="email" className="contact-input" />
-              </label>
-              <ErrorMessage
-                component="span"
-                name="email"
-                className="contact-error"
-              />
-            </div>
-            <div className="contact-container">
-              <label className="contact-label-message">
-                <span className="contact-label">Meddelande</span>
-
-                <Field as="textarea" name="message" className="contact-input" />
-              </label>
-              <ErrorMessage
-                component="span"
-                name="message"
-                className="contact-error"
-              />
-            </div>
-            <Button disabled={!dirty || isSubmitting || !isValid}>
-              Skicka
-            </Button>
           </Form>
         )}
       </Formik>
@@ -97,11 +101,28 @@ export default styled(Contact)`
   text-align: center;
   width: 100vw;
 
+  .contact-button {
+    grid-column: 3;
+  }
+
   .contact-container {
     color: #f5e4e4;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "none label error";
+    grid-template-columns: 10px auto auto 1fr;
+    row-gap: 3px;
+    width: fit-content;
+  }
+
+  .contact-container-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .contact-message-container {
+    width: 200px;
+    text-align: end;
   }
 
   .contact-error {
@@ -109,32 +130,34 @@ export default styled(Contact)`
     border-radius: 1em;
     box-shadow: 7px 5px 5px red, -7px -5px 5px red;
     color: red;
-    font-size: 0.8rem;
-    grid-area: error;
+    font-size: 0.6rem;
+    grid-column: 4;
     height: fit-content;
-    margin-right: 5px;
-    margin-top: 10.5px;
-    padding: 3px 3px 2px 5px;
-    width: 100px;
+    margin-top: 3px;
+    padding: 0 2px 0 0;
+    width: 90px;
   }
 
   .contact-input {
     align-items: flex-start;
     display: flex;
-    margin-bottom: 10px;
+    grid-column: 3;
+    margin-top: 0px;
     width: 150px;
   }
 
   .contact-label {
+    background-color: rgb(255, 183, 2, 0.55);
+    border-radius: 20px 0px 0px 20px;
     color: white;
-    text-align: end;
+    display: flex;
+    justify-self: end;
+    align-self: self-start;
+    grid-column: 2;
+    padding: 5px 5px 4px 10px;
+    text-align: right;
     text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
       2px 2px 15px #fc0;
-    width: 5rem;
-  }
-
-  .contact-label-message {
-    margin-right: 20%;
   }
 
   .contact-h1-container {
@@ -143,9 +166,7 @@ export default styled(Contact)`
   }
 
   form {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    width: fit-content;
   }
 
   h1 {
@@ -170,15 +191,5 @@ export default styled(Contact)`
       width: 100%;
       height: 100vh;
     }
-  }
-
-  label {
-    background-color: rgb(255, 183, 2, 0.55);
-    border-radius: 20px;
-    display: grid;
-    grid-area: label;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 2fr;
-    padding: 10px 10px 0 10px;
   }
 `;
