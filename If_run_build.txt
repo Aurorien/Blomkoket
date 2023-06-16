@@ -1,0 +1,1 @@
+Om du gör run build och vill köra builden behöver en mapp src skapas i dist-mappen och därefter kopiera assets-mappen med alla bilder + json-"databas" och klistra in i nämnda nyskapade src-mapp.

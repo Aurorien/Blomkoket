@@ -276,8 +276,8 @@
     {
       "id": 4,
       "title": "Maskroshonung",
-      "source": "Wonder Vegan",
-      "flowerIds": [6, 2, 3, 4, 5],
+      "source": "Grundrecept: Wonder Vegan, + extra kryddor",
+      "flowerIds": [1, 3, 5, 8],
       "ingredients": [
         {
           "amount": "100",
@@ -307,6 +307,7 @@
         "Koka upp och låt skjuda på låg värme i ca 20 minuter.",
         "Låt svalna och sila sedan bort bladen och häll vätskan i en ny, ren gryta.",
         "Häll i sockret och eventuellt juicen från 0.5-1 citron beroende på hur mycket syrlighet du vill ha. Vill du bara ha en klassisk, söt honung kan du skippa citronjuicen helt.",
+        "Krydda med luktärt, ringblomma, syren, ringblomma och blåbärsblommor.",
         "Låt koka i ca 60 minuter, tills honungen börjar tjockna. Tänk på att den blir ganska mycket tjockare/hårdare när den svalnar, så den ska vara ganska lättrinnande.",
         "Häll upp i rena, gärna varma, burkar.",
         "Låt svalna något innan du stänger locket.",
