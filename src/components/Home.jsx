@@ -27,6 +27,9 @@ function Home(props) {
   const flowers = useSelector((state) => state.flowers);
   const [titleClassName, setTitleClassName] = useState("title-h1");
   function titleClick() {
+    console.log(
+      "Du kan plocka flera av blommorna i det vilda. Blåbärsblommor är ett bra vandringssnacks!"
+    );
     titleClassName === "title-h1-clicked"
       ? setTitleClassName("title-h1")
       : setTitleClassName("title-h1-clicked");
