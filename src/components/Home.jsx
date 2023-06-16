@@ -1,21 +1,21 @@
 /* eslint-disable react-refresh/only-export-components */
-
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Div = styled.div`
-  margin: 0;
   background-color: #789cb6;
+  margin: 0;
   overflow: hidden;
+  padding-bottom: 50px;
   text-align: center;
-  padding-bottom: 60px;
 `;
 
 const Img = styled.img`
-  max-width: 100%;
-  height: auto;
   border-radius: 3px;
+  height: auto;
+  max-width: 100%;
   transition: transform 0.2s;
   &:hover {
     transform: scale(1.05);
@@ -25,6 +25,15 @@ const Img = styled.img`
 
 function Home(props) {
   const flowers = useSelector((state) => state.flowers);
+  const [titleClassName, setTitleClassName] = useState("title-h1");
+  function titleClick() {
+    console.log("Du kan plocka flera av blommorna ute i det vilda.");
+    if (titleClassName === "title-h1-clicked") {
+      setTitleClassName("title-h1");
+    } else {
+      setTitleClassName("title-h1-clicked");
+    }
+  }
 
   return (
     <Div className={props.className}>
@@ -36,7 +45,9 @@ function Home(props) {
             </Link>
           </li>
           <li className="text-title">
-            <h1>Blomgott</h1>
+            <h1 className={titleClassName} onClick={titleClick}>
+              Blomgott
+            </h1>
             <p>Ätbara blommor och recept</p>
           </li>
           <li className="img-title-right" key={flowers[1].id}>
@@ -82,7 +93,7 @@ export default styled(Home)`
   }
 
   li {
-    color: aliceblue;
+    color: rgb(240, 248, 255);
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -93,14 +104,6 @@ export default styled(Home)`
     display: flex;
     flex-direction: column;
     width: 100%;
-    h1 {
-      background-color: #789cb6;
-      color: #fcfcfd;
-      font-size: 3.4rem;
-      height: 100%;
-      margin: 0;
-      width: 100%;
-    }
     p {
       font-size: 1rem;
       font-weight: 100;
@@ -110,6 +113,25 @@ export default styled(Home)`
       text-align: center;
       width: 200px;
     }
+  }
+
+  .title-h1 {
+    background-color: rgb(120, 156, 182);
+    color: rgb(252, 252, 253);
+    font-size: 3.4rem;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+  }
+
+  .title-h1-clicked {
+    color: #fcfcfd;
+    font-size: 3.4rem;
+    height: 100%;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgb(221, 242, 137), -2px -2px 5px #ddf289,
+      -2px -2px 15px rgb(255, 204, 0), 2px 2px 15px rgb(255, 204, 0);
+    width: 100%;
   }
 
   .ul-lawn {

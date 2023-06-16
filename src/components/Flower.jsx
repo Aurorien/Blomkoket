@@ -39,7 +39,7 @@ function Flower(props) {
             </div>
           </section>
           <section className="recipes-section">
-            <h1>Recept:</h1>
+            <h1 className="recipes-section-h1">Recept:</h1>
             <RecipeCard margin={20} flowerId={flower.id} />
           </section>
         </article>
@@ -89,6 +89,10 @@ export default styled(Flower)`
     padding-bottom: 70px;
   }
 
+  .recipes-section-h1 {
+    color: #2d1a33;
+  }
+
   section {
     align-items: center;
     display: flex;
@@ -99,6 +103,7 @@ export default styled(Flower)`
   @media (min-width: 600px) {
     article {
       flex-direction: row;
+      padding-bottom: 90px;
     }
     img {
       max-width: 300px;

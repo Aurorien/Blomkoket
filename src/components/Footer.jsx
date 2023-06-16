@@ -31,7 +31,7 @@ export default styled(Footer)`
   a {
     color: #7005b3;
     font-size: 1rem;
-    margin-top: 6px;
+    margin-top: 4px;
     padding: 10px;
     text-decoration: none;
     width: 3rem;

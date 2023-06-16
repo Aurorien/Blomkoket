@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Field, ErrorMessage, Form, Formik } from "formik";
 import styled from "styled-components";
-import { Button } from "./Button";
+import { Button } from "./Button.tsx";
 
 interface StyledComponentsProps {
   className: string;
@@ -28,15 +28,15 @@ function Contact(props: StyledComponentsProps) {
           const errors: Partial<typeof values> = {};
 
           if (values.userName.trim() === "") {
-            errors.userName = "Namn kan inte lämnas tom";
+            errors.userName = "Namn behöver fyllas i";
           }
 
           if (values.email.trim() === "") {
-            errors.email = "Email kan inte lämnas tom";
+            errors.email = "Email behöver fyllas i";
           }
 
           if (values.message.trim() === "") {
-            errors.message = "Meddelande kan inte lämnas tom";
+            errors.message = "Meddelande behöver fyllas i";
           }
 
           return errors;
@@ -55,16 +55,24 @@ function Contact(props: StyledComponentsProps) {
                   name="userName"
                   className="contact-input"
                 />
-                <div className="contact-error">
-                  <ErrorMessage component="span" name="userName" />
+                <div className="contact-error-container">
+                  <ErrorMessage
+                    className="contact-error"
+                    component="span"
+                    name="userName"
+                  />
                 </div>
                 <label className="contact-label" htmlFor="email">
                   {" "}
                   Email
                 </label>
                 <Field id="email" name="email" className="contact-input" />
-                <div className="contact-error">
-                  <ErrorMessage component="span" name="email" />
+                <div className="contact-error-container">
+                  <ErrorMessage
+                    className="contact-error"
+                    component="span"
+                    name="email"
+                  />
                 </div>
 
                 <label className="contact-label" htmlFor="message">
@@ -77,8 +85,12 @@ function Contact(props: StyledComponentsProps) {
                   name="message"
                   className="contact-input"
                 />
-                <div className="contact-error">
-                  <ErrorMessage component="span" name="message" />
+                <div className="contact-error-container">
+                  <ErrorMessage
+                    className="contact-error"
+                    component="span"
+                    name="message"
+                  />
                 </div>
                 <div className="contact-button">
                   <Button disabled={!dirty || isSubmitting || !isValid}>
@@ -126,15 +138,19 @@ export default styled(Contact)`
   }
 
   .contact-error {
+    display: inline-block;
     background-color: #f5e4e4;
     border-radius: 1em;
     box-shadow: 7px 5px 5px red, -7px -5px 5px red;
     color: red;
     font-size: 0.6rem;
-    grid-column: 4;
     height: fit-content;
     margin-top: 3px;
-    padding: 0 2px 0 0;
+    padding: 2px 2px 3px 2px;
+  }
+
+  .contact-error-container {
+    grid-column: 4;
     width: 90px;
   }
 

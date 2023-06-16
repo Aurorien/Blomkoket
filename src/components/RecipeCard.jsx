@@ -4,13 +4,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Div = styled.div`
+  background-color: #dfd9ff;
   border-color: rgb(242, 173, 83);
-  border-width: 1em;
   border-radius: 10px;
+  border-style: double;
+  border-width: 0.3em;
+  margin: ${(props) => props.margin}px;
   max-width: fit-content;
   padding: 15px;
-  background-color: #f5d9ff;
-  margin: ${(props) => props.margin}px;
+  transition: transform 0.05s;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 function RecipeCard(props) {
@@ -31,7 +36,11 @@ function RecipeCard(props) {
   return (
     <>
       {filteredRecipes.map((recipe) => (
-        <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
+        <Link
+          to={`/recipe/${recipe.id}`}
+          key={recipe.id}
+          style={{ textDecoration: "none" }}
+        >
           <Div key={recipe.id} margin={props.margin}>
             {recipe.title}
           </Div>

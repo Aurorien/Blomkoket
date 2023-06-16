@@ -1,11 +1,9 @@
-// import { useState } from 'react'
-import Contact from "./components/Contact";
+import Contact from "./components/Contact.tsx";
 import Flower from "./components/Flower";
 import Footer from "./components/Footer";
 import GlobalStyled from "./globalStyled";
 import Home from "./components/Home";
-
-import Recipe from "./components/Recipe";
+import Recipe from "./components/Recipe.tsx";
 import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
