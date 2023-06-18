@@ -49,20 +49,18 @@ function Flower(props) {
 }
 
 export default styled(Flower)`
-  background-color: #fbf9d0;
   color: #1b1b1b;
   height: 100%;
   article {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     overflow-wrap: break-word;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 5px;
-    padding-left: 10px;
   }
 
   p {
@@ -97,13 +95,22 @@ export default styled(Flower)`
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-bottom: 7px;
+    &:first-child {
+      /* background-color: rgb(208, 206, 162); */
+      background-color: #fbf9d0;
+      min-height: 100vh;
+    }
+    &:nth-child(2) {
+      /* background-color: #fbf9d0; */
+      background-color: rgb(208, 206, 162);
+      width: 100%;
+      max-width: 370px;
+    }
   }
 
   @media (min-width: 600px) {
     article {
       flex-direction: row;
-      padding-bottom: 90px;
     }
     img {
       max-width: 300px;

@@ -179,6 +179,7 @@ export default styled(Contact)`
   .contact-h1-container {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
   }
 
   form {
@@ -190,7 +191,7 @@ export default styled(Contact)`
     border-radius: 30px;
     box-shadow: 2px 2px 15px #ffb702, 2px 2px 15px rgb(255, 183, 2);
     color: white;
-    margin: 30px 0 20px 0;
+    margin: 90px 0 20px 0;
     text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
       2px 2px 15px #fc0;
     width: fit-content;

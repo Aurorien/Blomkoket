@@ -12,10 +12,6 @@ const Div = styled.div`
   margin: ${(props) => props.margin}px;
   max-width: fit-content;
   padding: 15px;
-  transition: transform 0.05s;
-  &:hover {
-    transform: scale(1.05);
-  }
 `;
 
 function RecipeCard(props) {

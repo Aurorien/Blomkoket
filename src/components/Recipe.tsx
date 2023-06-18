@@ -61,7 +61,7 @@ function Recipe(props: StyledComponentsProps) {
     <div className={props.className}>
       {recipe && (
         <div className="recipe-container">
-          <article>
+          <article style={{ padding: " 7% 0 20px 10%", width: "400px;" }}>
             <h1>{recipe.title} </h1>
             <p>Källa: {recipe.source}</p>
             <section>
@@ -84,7 +84,15 @@ function Recipe(props: StyledComponentsProps) {
               </ol>
             </section>
           </article>
-          <article>
+
+          <article
+            style={{
+              width: "230px",
+              backgroundColor: "rgb(211, 205, 192)",
+              marginTop: 0,
+              minHeight: "100vh",
+            }}
+          >
             <h2 className="recipe-flowers-used-h2">Blommor i receptet:</h2>
             <ul className="recipe-flowers-used">
               {flowersUsed.map((flower, index) => (
@@ -104,19 +112,19 @@ function Recipe(props: StyledComponentsProps) {
 }
 
 export default styled(Recipe)`
-  background-color: rgb(129, 194, 251);
+  background-color: #b2cad5;
   color: #1b1b1b;
   height: 100vh;
   margin: 0;
   overflow-x: hidden;
   overflow-wrap: break-word;
   width: 100vw;
-  text-shadow: 7px 7px 10px white, -7px -7px 10px white, 7px 7px 18px white,
-    -7px -7px 18px white;
+  text-shadow: 7px 7px 18px white, -7px -7px 18px white -7px 7px 18px white,
+    7px -7px 18px white;
 
   article {
-    width: 100vw;
-    padding: 7% 0 20px 10%;
+    min-height: 100vh;
+    max-width: 490px;
   }
 
   h1 {
@@ -133,7 +141,7 @@ export default styled(Recipe)`
 
   ol,
   ul {
-    max-width: 550px;
+    max-width: 400px;
     li {
       margin-bottom: 10px;
       padding-right: 70px;
@@ -155,7 +163,9 @@ export default styled(Recipe)`
   .recipe-container {
     display: flex;
     flex-direction: column;
-    padding-bottom: 90px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
   }
 
   .recipe-flowers-used {
@@ -196,13 +206,9 @@ export default styled(Recipe)`
   }
 
   @media (min-width: 845px) {
-    article {
-      max-width: 100vw;
-      padding-bottom: 90px;
-    }
-
     .recipe-container {
       flex-direction: row;
+      justify-content: space-evenly;
     }
   }
 `;

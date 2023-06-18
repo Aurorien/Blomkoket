@@ -8,12 +8,11 @@ const Div = styled.div`
   background-color: #789cb6;
   margin: 0;
   overflow: hidden;
-  padding-bottom: 50px;
   text-align: center;
 `;
 
 const FlowerImageContainer = styled.div`
-  margin: -3px;
+  margin: -1px;
   overflow: hidden;
   position: relative;
 
@@ -100,28 +99,30 @@ function Home(props) {
       )}
 
       {flowers && flowers.length > 2 && (
-        <ul className="ul-lawn">
-          {flowers.slice(2, 18).map((flower) => (
-            <li key={flower.id}>
-              <Link to={`/flower/${flower.id}`}>
-                <FlowerImageContainer>
-                  <Img
-                    key={flower.id}
-                    src={flower.img}
-                    alt={flower.name}
-                    style={{
-                      marginTop: "-2px",
-                      marginBottom: "-3px",
-                    }}
-                  />
-                  <FlowerTastenotes>
-                    {flower.tastenotes.join(", ")}
-                  </FlowerTastenotes>
-                </FlowerImageContainer>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="ul-lawn-wrapper">
+          <ul className="ul-lawn">
+            {flowers.slice(2, 18).map((flower) => (
+              <li key={flower.id}>
+                <Link to={`/flower/${flower.id}`}>
+                  <FlowerImageContainer>
+                    <Img
+                      key={flower.id}
+                      src={flower.img}
+                      alt={flower.name}
+                      style={{
+                        marginTop: "-2px",
+                        marginBottom: "-3px",
+                      }}
+                    />
+                    <FlowerTastenotes>
+                      {flower.tastenotes.join(", ")}
+                    </FlowerTastenotes>
+                  </FlowerImageContainer>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </Div>
   );
@@ -181,10 +182,6 @@ export default styled(Home)`
   }
 
   .ul-lawn {
-    background-image: url("../src/assets/img/meadow.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0;
@@ -193,6 +190,14 @@ export default styled(Home)`
     @media (min-width: 700px) {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+  }
+
+  .ul-lawn-wrapper {
+    background-image: url("../src/assets/img/meadow.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 6px;
   }
 
   .ul-title {
