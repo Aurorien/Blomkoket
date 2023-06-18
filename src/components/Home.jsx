@@ -12,14 +12,45 @@ const Div = styled.div`
   text-align: center;
 `;
 
+const FlowerImageContainer = styled.div`
+  margin: -3px;
+  overflow: hidden;
+  position: relative;
+
+  z-index: 1;
+  &:hover {
+    overflow: visible;
+    z-index: 2;
+  }
+`;
+
 const Img = styled.img`
   border-radius: 3px;
   height: auto;
   max-width: 100%;
   transition: transform 0.2s;
-  &:hover {
+  ${FlowerImageContainer}:hover & {
     transform: scale(1.05);
     border-radius: 7px;
+  }
+`;
+
+const FlowerTastenotes = styled.span`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(29, 77, 29, 0.7);
+  color: #fffcf5;
+  padding: 2.5px 5px;
+  border-radius: 20%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  ${FlowerImageContainer}:hover & {
+    opacity: 1;
+    ${Img} {
+      transform: scale(1.05);
+      border-radius: 7px;
+    }
   }
 `;
 
@@ -41,7 +72,12 @@ function Home(props) {
         <ul className="ul-title">
           <li className="img-title-left" key={flowers[0].id}>
             <Link to={`/flower/${flowers[0].id}`}>
-              <Img src={flowers[0].img} alt={flowers[0].name} />
+              <FlowerImageContainer>
+                <Img src={flowers[0].img} alt={flowers[0].name} />
+                <FlowerTastenotes>
+                  {flowers[0].tastenotes.join(", ")}
+                </FlowerTastenotes>
+              </FlowerImageContainer>
             </Link>
           </li>
           <li className="text-title">
@@ -52,7 +88,12 @@ function Home(props) {
           </li>
           <li className="img-title-right" key={flowers[1].id}>
             <Link to={`/flower/${flowers[1].id}`}>
-              <Img src={flowers[1].img} alt={flowers[1].name} />
+              <FlowerImageContainer>
+                <Img src={flowers[1].img} alt={flowers[1].name} />
+                <FlowerTastenotes>
+                  {flowers[1].tastenotes.join(", ")}
+                </FlowerTastenotes>
+              </FlowerImageContainer>
             </Link>
           </li>
         </ul>
@@ -63,15 +104,20 @@ function Home(props) {
           {flowers.slice(2, 18).map((flower) => (
             <li key={flower.id}>
               <Link to={`/flower/${flower.id}`}>
-                <Img
-                  key={flower.id}
-                  src={flower.img}
-                  alt={flower.name}
-                  style={{
-                    marginTop: "-2px",
-                    marginBottom: "-3px",
-                  }}
-                />
+                <FlowerImageContainer>
+                  <Img
+                    key={flower.id}
+                    src={flower.img}
+                    alt={flower.name}
+                    style={{
+                      marginTop: "-2px",
+                      marginBottom: "-3px",
+                    }}
+                  />
+                  <FlowerTastenotes>
+                    {flower.tastenotes.join(", ")}
+                  </FlowerTastenotes>
+                </FlowerImageContainer>
               </Link>
             </li>
           ))}

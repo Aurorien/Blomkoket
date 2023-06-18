@@ -135,7 +135,7 @@
       "id": 16,
       "name": "Blåklint",
       "color": "blå",
-      "tastenotes": ["mild", ""],
+      "tastenotes": ["mild"],
       "use": ["Måttlig", "dekoration"],
       "img": "../src/assets/img/cornflower.png"
     },
