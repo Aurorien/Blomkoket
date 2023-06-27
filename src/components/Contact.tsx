@@ -2,27 +2,46 @@
 import { Field, ErrorMessage, Form, Formik } from "formik";
 import styled from "styled-components";
 import { Button } from "./Button.tsx";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface StyledComponentsProps {
   className: string;
 }
 
 function Contact(props: StyledComponentsProps) {
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const navigate = useNavigate();
   return (
     <div className={props.className}>
       <div className="image-container">
         <img src="../src/assets/img/contact.png" alt="" />
       </div>
-      <span className="contact-h1-container">
-        <h1>Kontakta Admin</h1>
-      </span>
+      <div className="contact-head-container">
+        <h1 className="contact-head">Kontakta Admin</h1>
+        {submitted ? (
+          <p className="contact-headinfo-2">
+            Tack för ditt meddelande! Vi svarar så snart vi kan!
+          </p>
+        ) : (
+          <p className="contact-headinfo-1">
+            Varsågod att skicka meddelande via nedan formulär!
+          </p>
+        )}
+      </div>
+
+      {/* If onSubmit is async, then Formik will automatically set isSubmitting to false on your behalf once it has resolved. This means you do NOT need to call formikBag.setSubmitting(false) manually. However, if your onSubmit function is synchronous, then you need to call setSubmitting(false) on your own. -Formik docs */}
       <Formik
         initialValues={{ userName: "", email: "", message: "" }}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           console.log("Formik submit values", values);
+          setSubmitted(true);
           setTimeout(() => {
             setSubmitting(false);
-          }, 1000);
+            resetForm();
+            setSubmitted(false);
+            navigate("/");
+          }, 3500);
         }}
         validate={(values) => {
           const errors: Partial<typeof values> = {};
@@ -44,61 +63,63 @@ function Contact(props: StyledComponentsProps) {
       >
         {({ dirty, isSubmitting, isValid }) => (
           <Form>
-            <div className="contact-container-container">
-              <div className="contact-container">
-                <label className="contact-label" htmlFor="userName">
-                  {" "}
-                  Namn
-                </label>
-                <Field
-                  id="userName"
-                  name="userName"
-                  className="contact-input"
-                />
-                <div className="contact-error-container">
-                  <ErrorMessage
-                    className="contact-error"
-                    component="span"
+            {submitted ? null : (
+              <div className="contact-container-container">
+                <div className="contact-container">
+                  <label className="contact-label" htmlFor="userName">
+                    {" "}
+                    Namn
+                  </label>
+                  <Field
+                    id="userName"
                     name="userName"
+                    className="contact-input"
                   />
-                </div>
-                <label className="contact-label" htmlFor="email">
-                  {" "}
-                  Email
-                </label>
-                <Field id="email" name="email" className="contact-input" />
-                <div className="contact-error-container">
-                  <ErrorMessage
-                    className="contact-error"
-                    component="span"
-                    name="email"
-                  />
-                </div>
+                  <div className="contact-error-container">
+                    <ErrorMessage
+                      className="contact-error"
+                      component="span"
+                      name="userName"
+                    />
+                  </div>
+                  <label className="contact-label" htmlFor="email">
+                    {" "}
+                    Email
+                  </label>
+                  <Field id="email" name="email" className="contact-input" />
+                  <div className="contact-error-container">
+                    <ErrorMessage
+                      className="contact-error"
+                      component="span"
+                      name="email"
+                    />
+                  </div>
 
-                <label className="contact-label" htmlFor="message">
-                  {" "}
-                  Meddelande
-                </label>
-                <Field
-                  as="textarea"
-                  id="message"
-                  name="message"
-                  className="contact-input"
-                />
-                <div className="contact-error-container">
-                  <ErrorMessage
-                    className="contact-error"
-                    component="span"
+                  <label className="contact-label" htmlFor="message">
+                    {" "}
+                    Meddelande
+                  </label>
+                  <Field
+                    as="textarea"
+                    id="message"
                     name="message"
+                    className="contact-input"
                   />
-                </div>
-                <div className="contact-button">
-                  <Button disabled={!dirty || isSubmitting || !isValid}>
-                    Skicka
-                  </Button>
+                  <div className="contact-error-container">
+                    <ErrorMessage
+                      className="contact-error"
+                      component="span"
+                      name="message"
+                    />
+                  </div>
+                  <div className="contact-button">
+                    <Button disabled={!dirty || isSubmitting || !isValid}>
+                      Skicka
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </Form>
         )}
       </Formik>
@@ -176,24 +197,52 @@ export default styled(Contact)`
       2px 2px 15px #fc0;
   }
 
-  .contact-h1-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
-
-  form {
-    width: fit-content;
-  }
-
-  h1 {
+  .contact-head {
     background-color: rgb(255, 183, 2, 0.8);
     border-radius: 30px;
     box-shadow: 2px 2px 15px #ffb702, 2px 2px 15px rgb(255, 183, 2);
     color: white;
-    margin: 90px 0 20px 0;
+    margin: 70px 0 15px 0;
     text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
       2px 2px 15px #fc0;
+    width: fit-content;
+  }
+
+  .contact-headinfo-1,
+  .contact-headinfo-2 {
+    background-color: rgb(54, 134, 64, 0.8);
+    box-shadow: 2px 2px 30px rgb(255, 204, 0, 0.5),
+      2px 2px 30px rgb(255, 204, 0, 0.5);
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 0.86rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding: 5px;
+    text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
+      2px 2px 15px #fc0;
+  }
+
+  .contact-headinfo-1 {
+    background-color: rgb(47, 53, 37, 0.3);
+    box-shadow: 2px 2px 20px rgb(40, 40, 39, 0.3),
+      2px 2px 20px rgb(82, 83, 67, 0.3);
+    text-shadow: 2px 2px 5px black, -2px -2px 5px black, 2px -2px 5px #1b1b14,
+      -2px -2px 15px rgb(82, 83, 67, 0.3), 2px 2px 15px rgb(82, 83, 67, 0.3);
+  }
+
+  .contact-headinfo-2 {
+    margin-top: 55px;
+  }
+
+  .contact-head-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  form {
     width: fit-content;
   }
 

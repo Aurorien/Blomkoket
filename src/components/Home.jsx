@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Div = styled.div`
   background-color: #789cb6;
@@ -15,7 +15,6 @@ const FlowerImageContainer = styled.div`
   margin: -1px;
   overflow: hidden;
   position: relative;
-
   z-index: 1;
   &:hover {
     overflow: visible;
@@ -55,6 +54,21 @@ const FlowerTastenotes = styled.span`
 
 function Home(props) {
   const flowers = useSelector((state) => state.flowers);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 190);
+  }, []);
+
+  useEffect(() => {
+    // Sets the opacity to 1 by a transition after loading is complete
+    if (!loading) {
+      document.getElementById("home-page").classList.add("show");
+    }
+  }, [loading]);
+
   const [titleClassName, setTitleClassName] = useState("title-h1");
   function titleClick() {
     console.log(
@@ -67,61 +81,67 @@ function Home(props) {
 
   return (
     <Div className={props.className}>
-      {flowers && flowers.length >= 2 && (
-        <ul className="ul-title">
-          <li className="img-title-left" key={flowers[0].id}>
-            <Link to={`/flower/${flowers[0].id}`}>
-              <FlowerImageContainer>
-                <Img src={flowers[0].img} alt={flowers[0].name} />
-                <FlowerTastenotes>
-                  {flowers[0].tastenotes.join(", ")}
-                </FlowerTastenotes>
-              </FlowerImageContainer>
-            </Link>
-          </li>
-          <li className="text-title">
-            <h1 className={titleClassName} onClick={titleClick}>
-              Blomgott
-            </h1>
-            <p>Ätbara blommor och recept</p>
-          </li>
-          <li className="img-title-right" key={flowers[1].id}>
-            <Link to={`/flower/${flowers[1].id}`}>
-              <FlowerImageContainer>
-                <Img src={flowers[1].img} alt={flowers[1].name} />
-                <FlowerTastenotes>
-                  {flowers[1].tastenotes.join(", ")}
-                </FlowerTastenotes>
-              </FlowerImageContainer>
-            </Link>
-          </li>
-        </ul>
-      )}
-
-      {flowers && flowers.length > 2 && (
-        <div className="ul-lawn-wrapper">
-          <ul className="ul-lawn">
-            {flowers.slice(2, 18).map((flower) => (
-              <li key={flower.id}>
-                <Link to={`/flower/${flower.id}`}>
+      {loading ? (
+        <p style={{ color: "white", marginTop: "100px" }}>Laddar...</p>
+      ) : (
+        <div className="home-load" id="home-page">
+          {flowers && flowers.length >= 2 && (
+            <ul className="ul-title">
+              <li className="img-title-left" key={flowers[0].id}>
+                <Link to={`/flower/${flowers[0].id}`}>
                   <FlowerImageContainer>
-                    <Img
-                      key={flower.id}
-                      src={flower.img}
-                      alt={flower.name}
-                      style={{
-                        marginTop: "-2px",
-                        marginBottom: "-3px",
-                      }}
-                    />
+                    <Img src={flowers[0].img} alt={flowers[0].name} />
                     <FlowerTastenotes>
-                      {flower.tastenotes.join(", ")}
+                      {flowers[0].tastenotes.join(", ")}
                     </FlowerTastenotes>
                   </FlowerImageContainer>
                 </Link>
               </li>
-            ))}
-          </ul>
+              <li className="text-title">
+                <h1 className={titleClassName} onClick={titleClick}>
+                  Blomgott
+                </h1>
+                <p>Ätbara blommor och recept</p>
+              </li>
+              <li className="img-title-right" key={flowers[1].id}>
+                <Link to={`/flower/${flowers[1].id}`}>
+                  <FlowerImageContainer>
+                    <Img src={flowers[1].img} alt={flowers[1].name} />
+                    <FlowerTastenotes>
+                      {flowers[1].tastenotes.join(", ")}
+                    </FlowerTastenotes>
+                  </FlowerImageContainer>
+                </Link>
+              </li>
+            </ul>
+          )}
+
+          {flowers && flowers.length > 2 && (
+            <div className="ul-lawn-wrapper">
+              <ul className="ul-lawn">
+                {flowers.slice(2, 18).map((flower) => (
+                  <li key={flower.id}>
+                    <Link to={`/flower/${flower.id}`}>
+                      <FlowerImageContainer>
+                        <Img
+                          key={flower.id}
+                          src={flower.img}
+                          alt={flower.name}
+                          style={{
+                            marginTop: "-2px",
+                            marginBottom: "-3px",
+                          }}
+                        />
+                        <FlowerTastenotes>
+                          {flower.tastenotes.join(", ")}
+                        </FlowerTastenotes>
+                      </FlowerImageContainer>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
     </Div>
@@ -129,6 +149,14 @@ function Home(props) {
 }
 
 export default styled(Home)`
+  .home-load {
+    opacity: 0;
+    transition: opacity 0.9s;
+    &.show {
+      opacity: 1;
+    }
+  }
+
   .img-title-left {
     display: inline-block;
     margin: 0;
