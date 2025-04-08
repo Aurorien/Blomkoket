@@ -1,1 +1,1 @@
-Om du gör run build och vill köra builden behöver en mapp src skapas i dist-mappen och därefter kopiera assets-mappen med alla bilder + json-"databas" och klistra in i nämnda nyskapade src-mapp.
+If you do a build and want to run the build, you need to create a src folder in the dist folder and then copy the assets folder with all images + json "database" and paste it into the newly created src folder mentioned.
