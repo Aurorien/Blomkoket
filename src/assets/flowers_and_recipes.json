@@ -136,7 +136,7 @@
       "name": "Blåklint",
       "color": "blå",
       "tastenotes": ["mild"],
-      "use": ["Måttlig", "dekoration"],
+      "use": ["Måttlig", "Dekoration"],
       "img": "../src/assets/img/cornflower.png"
     },
     {
@@ -144,7 +144,7 @@
       "name": "Blomsterkrasse",
       "color": ["gul", "orange", "röd"],
       "tastenotes": ["stark", "pepprig", "bitter"],
-      "use": ["Obegränsad", "krydda"],
+      "use": ["Obegränsad", "Krydda"],
       "img": "../src/assets/img/krasse.png"
     },
     {
