@@ -63,7 +63,7 @@ function Recipe(props: StyledComponentsProps) {
         <div className="recipe-container">
           <article style={{ padding: " 7% 0 20px 10%", width: "400px;" }}>
             <h1>{recipe.title} </h1>
-            <p>Källa: {recipe.source}</p>
+            <p style={{ marginBottom: 50 }}>Källa: {recipe.source}</p>
             <section>
               <h2>Ingredienser</h2>
               <ul>
@@ -129,14 +129,15 @@ export default styled(Recipe)`
 
   h1 {
     font-size: 2rem;
+    margin-top: 0px;
     margin-bottom: 0;
     padding-right: 60px;
   }
 
   h2 {
     font-size: 1.3em;
-    margin-top: 27px;
-    margin-bottom: 40px;
+    margin-top: 35px;
+    margin-bottom: 20px;
   }
 
   ol,
@@ -196,6 +197,8 @@ export default styled(Recipe)`
   .recipe-flowers-used-h2 {
     color: #241554;
     margin-left: 28px;
+    margin-top: 63px;
+    margin-bottom: 43px;
   }
 
   @media (min-width: 704px) and (max-width: 750px) {

@@ -60,6 +60,7 @@ export default styled(Flower)`
 
   h1 {
     font-size: 1.8rem;
+    margin-top: 50px;
     margin-bottom: 5px;
   }
 
@@ -88,6 +89,7 @@ export default styled(Flower)`
   }
 
   .recipes-section-h1 {
+    margin-top: 60px;
     color: #2d1a33;
   }
 

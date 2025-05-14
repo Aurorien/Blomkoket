@@ -69,6 +69,8 @@ export default styled(Navbar)`
     height: 100px;
     padding-top: 10px;
     padding-right: 7px;
+    margin-top: 10px;
+    margin-right: 2px;
     text-align: end;
     width: 90px;
     z-index: 4;

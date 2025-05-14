@@ -135,6 +135,7 @@ export default styled(Contact)`
   width: 100vw;
 
   .contact-button {
+    margin-top: 9px;
     grid-column: 3;
   }
 
@@ -142,7 +143,7 @@ export default styled(Contact)`
     color: #f5e4e4;
     display: grid;
     grid-template-columns: 10px auto auto 1fr;
-    row-gap: 3px;
+    row-gap: 10px;
     width: fit-content;
   }
 
@@ -210,29 +211,29 @@ export default styled(Contact)`
 
   .contact-headinfo-1,
   .contact-headinfo-2 {
-    background-color: rgb(54, 134, 64, 0.8);
-    box-shadow: 2px 2px 30px rgb(255, 204, 0, 0.5),
-      2px 2px 30px rgb(255, 204, 0, 0.5);
     border-radius: 30px;
     color: #ffffff;
-    font-size: 0.86rem;
+    font-size: 0.97rem;
     margin-top: 0;
     margin-bottom: 25px;
     padding: 5px;
-    text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
-      2px 2px 15px #fc0;
   }
 
   .contact-headinfo-1 {
-    background-color: rgb(47, 53, 37, 0.3);
-    box-shadow: 2px 2px 20px rgb(40, 40, 39, 0.3),
-      2px 2px 20px rgb(82, 83, 67, 0.3);
+    background-color: rgb(49, 78, 0, 0.7);
+    box-shadow: 2px 2px 5px rgb(40, 40, 39, 0.6),
+      2px 2px 5px rgb(82, 83, 67, 0.3);
     text-shadow: 2px 2px 5px black, -2px -2px 5px black, 2px -2px 5px #1b1b14,
-      -2px -2px 15px rgb(82, 83, 67, 0.3), 2px 2px 15px rgb(82, 83, 67, 0.3);
+      -2px -2px 15px rgb(82, 83, 67, 0.8), 2px 2px 15px rgb(82, 83, 67, 0.8);
   }
 
   .contact-headinfo-2 {
     margin-top: 55px;
+    background-color: rgb(54, 134, 64, 0.8);
+    box-shadow: 2px 2px 30px rgb(255, 204, 0, 0.8),
+      2px 2px 30px rgb(255, 204, 0, 0.8);
+    text-shadow: 2px 2px 5px black, -2px -2px 5px black, -2px -2px 15px #fc0,
+      2px 2px 15px #fc0;
   }
 
   .contact-head-container {
